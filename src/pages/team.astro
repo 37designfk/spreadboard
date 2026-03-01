@@ -1,13 +1,67 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const riders = [
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const mainTeam = [
+  {
+    name: '尾川 慎二',
+    nameEn: 'Shinji Ogawa',
+    model: '',
+    description: '',
+    photo: '/team/ogawa.jpg',
+  },
   {
     name: '堀内 礼',
     nameEn: 'Rei Horiuchi',
     model: 'ZERO',
     description: 'ZERO モデルの監修ライダー。グラトリからフリーランまで幅広いスタイルで表現するオールラウンダー。',
-    social: '',
+    photo: '/team/horiuchi.jpg',
+  },
+  {
+    name: '田中 彪麻',
+    nameEn: 'Hyoma Tanaka',
+    model: '',
+    description: '',
+    photo: '/team/tanaka.jpg',
+  },
+  {
+    name: '土谷 英虎',
+    nameEn: 'Hidetora Tsuchiya',
+    model: '',
+    description: '',
+    photo: '/team/tsuchiya.jpg',
+  },
+  {
+    name: '西岡 佑真',
+    nameEn: 'Yuma Nishioka',
+    model: '',
+    description: '',
+    photo: '/team/nishioka.jpg',
+  },
+];
+
+const rdTeam = [
+  {
+    name: '勝呂 裕一郎',
+    nameEn: 'Yuichiro Suguro',
+    model: 'RD',
+    description: '',
+    photo: '/team/suguro.jpg',
+  },
+  {
+    name: '蘇原 空斗',
+    nameEn: 'Kuto Sohara',
+    model: 'RD',
+    description: '',
+    photo: '/team/sohara.jpg',
+  },
+  {
+    name: '関谷 陸',
+    nameEn: 'Riku Sekiya',
+    model: 'RD',
+    description: '',
+    photo: '/team/sekiya.jpg',
   },
 ];
 ---
@@ -22,22 +76,71 @@ const riders = [
     <h1 class="text-4xl sm:text-5xl font-black tracking-tight italic">TEAM</h1>
   </div>
 
+  <!-- Main Team -->
   <div class="max-w-7xl mx-auto px-6 py-16">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {riders.map(rider => (
-        <div class="border border-white/5 p-8 hover:border-white/15 transition-colors">
-          <!-- Avatar placeholder -->
-          <div class="w-16 h-16 bg-white/5 border border-white/10 flex items-center justify-center mb-6">
-            <span class="text-white/20 text-xl font-black italic">
-              {rider.name.charAt(0)}
-            </span>
+    <div class="flex items-center gap-4 mb-10">
+      <h2 class="text-xs tracking-[0.4em] uppercase text-white/40 font-medium">TEAM RIDERS</h2>
+      <div class="flex-1 h-px bg-white/5"></div>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      {mainTeam.map(rider => (
+        <div class="group">
+          <div class="aspect-square overflow-hidden mb-4 bg-white/5">
+            {rider.photo ? (
+              <img
+                src={`${base}${rider.photo}`}
+                alt={rider.name}
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+            ) : (
+              <div class="w-full h-full flex items-center justify-center">
+                <span class="text-white/20 text-2xl font-black italic">{rider.name.charAt(0)}</span>
+              </div>
+            )}
           </div>
+          {rider.model && (
+            <p class="text-[10px] tracking-[0.3em] uppercase text-white/30 mb-1">{rider.model}</p>
+          )}
+          <h2 class="text-sm font-black italic text-white mb-0.5">{rider.name}</h2>
+          <p class="text-white/30 text-[10px] tracking-widest">{rider.nameEn}</p>
+          {rider.description && (
+            <p class="text-white/40 text-xs leading-relaxed mt-3">{rider.description}</p>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
 
-          <p class="text-[10px] tracking-[0.3em] uppercase text-white/30 mb-1">{rider.model}</p>
-          <h2 class="text-xl font-black italic text-white mb-1">{rider.name}</h2>
-          <p class="text-white/30 text-xs tracking-widest mb-5">{rider.nameEn}</p>
-
-          <p class="text-white/50 text-sm leading-relaxed">{rider.description}</p>
+  <!-- RD Series Team -->
+  <div class="max-w-7xl mx-auto px-6 pb-16">
+    <div class="flex items-center gap-4 mb-10">
+      <h2 class="text-xs tracking-[0.4em] uppercase text-white/40 font-medium">RD SERIES</h2>
+      <div class="flex-1 h-px bg-white/5"></div>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      {rdTeam.map(rider => (
+        <div class="group">
+          <div class="aspect-square overflow-hidden mb-4 bg-white/5">
+            {rider.photo ? (
+              <img
+                src={`${base}${rider.photo}`}
+                alt={rider.name}
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+            ) : (
+              <div class="w-full h-full flex items-center justify-center">
+                <span class="text-white/20 text-2xl font-black italic">{rider.name.charAt(0)}</span>
+              </div>
+            )}
+          </div>
+          {rider.model && (
+            <p class="text-[10px] tracking-[0.3em] uppercase text-white/30 mb-1">{rider.model}</p>
+          )}
+          <h2 class="text-sm font-black italic text-white mb-0.5">{rider.name}</h2>
+          <p class="text-white/30 text-[10px] tracking-widest">{rider.nameEn}</p>
+          {rider.description && (
+            <p class="text-white/40 text-xs leading-relaxed mt-3">{rider.description}</p>
+          )}
         </div>
       ))}
     </div>
