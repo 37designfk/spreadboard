@@ -1,0 +1,85 @@
+---
+const nav = [
+  { label: 'HOME', href: '/' },
+  { label: 'BOARDS', href: '/boards' },
+  { label: 'TEAM', href: '/team' },
+  { label: 'CONTACT', href: '/contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-black/90 backdrop-blur-sm">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 group">
+      <div class="relative">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="28" fill="white"/>
+          <path d="M17 6L11 14H16L11 22" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="text-white font-bold tracking-[0.25em] text-sm uppercase">SPREAD</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      {nav.map(({ label, href }) => {
+        const isActive = href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+        return (
+          <a
+            href={href}
+            class:list={[
+              'text-xs tracking-[0.2em] uppercase font-medium transition-colors duration-200',
+              isActive ? 'text-white' : 'text-white/40 hover:text-white/80'
+            ]}
+          >
+            {label}
+          </a>
+        );
+      })}
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button
+      id="menu-btn"
+      class="md:hidden w-8 h-8 flex flex-col justify-center gap-1.5"
+      aria-label="メニューを開く"
+    >
+      <span class="block h-px bg-white transition-all duration-300" id="line1"></span>
+      <span class="block h-px bg-white transition-all duration-300" id="line2"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-nav" class="hidden md:hidden border-t border-white/10 bg-black">
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-5">
+      {nav.map(({ label, href }) => {
+        const isActive = href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+        return (
+          <a
+            href={href}
+            class:list={[
+              'text-xs tracking-[0.3em] uppercase font-medium transition-colors',
+              isActive ? 'text-white' : 'text-white/40'
+            ]}
+          >
+            {label}
+          </a>
+        );
+      })}
+    </nav>
+  </div>
+</header>
+
+<!-- ヘッダー分のスペーサー -->
+<div class="h-16"></div>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const nav = document.getElementById('mobile-nav');
+
+  btn?.addEventListener('click', () => {
+    nav?.classList.toggle('hidden');
+  });
+</script>
