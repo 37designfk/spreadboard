@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import BoardCard from '../components/BoardCard.astro';
 import { getCollection } from 'astro:content';
 
+const base = import.meta.env.BASE_URL;
+
 const allBoards = await getCollection('boards');
 const featured = allBoards
   .sort((a, b) => a.data.sortOrder - b.data.sortOrder)
@@ -44,7 +46,7 @@ const featured = allBoards
           </p>
           <div class="flex flex-wrap gap-4">
             <a
-              href="/boards"
+              href={`${base}boards`}
               class="inline-flex items-center gap-3 bg-white text-black text-xs font-bold tracking-[0.2em] uppercase px-6 py-3 hover:bg-red-600 hover:text-white transition-colors duration-200"
             >
               <span>BOARDS 2026/27</span>
@@ -53,7 +55,7 @@ const featured = allBoards
               </svg>
             </a>
             <a
-              href="/contact"
+              href={`${base}contact`}
               class="inline-flex items-center gap-3 border border-white/20 text-white/60 text-xs font-medium tracking-[0.2em] uppercase px-6 py-3 hover:border-white/50 hover:text-white transition-colors duration-200"
             >
               CONTACT
@@ -108,7 +110,7 @@ const featured = allBoards
           { series: 'RD SERIES', desc: 'カービング特化', models: 'RD / RD CV', color: 'border-white/10' },
           { series: 'SPECIAL', desc: 'スペシャルモデル', models: 'DX / ZERO', color: 'border-white/10' },
         ].map(({ series, desc, models, color }) => (
-          <a href="/boards" class:list={['border p-5 hover:border-white/30 transition-colors group', color]}>
+          <a href={`${base}boards`} class:list={['border p-5 hover:border-white/30 transition-colors group', color]}>
             <p class="text-[10px] tracking-[0.25em] uppercase text-white/30 group-hover:text-red-400 transition-colors mb-2">{series}</p>
             <p class="text-white text-sm font-medium mb-1">{desc}</p>
             <p class="text-white/30 text-xs">{models}</p>
@@ -125,7 +127,7 @@ const featured = allBoards
         <p class="text-red-500 text-[10px] tracking-[0.4em] uppercase mb-3">LINEUP</p>
         <h2 class="text-2xl font-black tracking-tight italic">2026/27 BOARDS</h2>
       </div>
-      <a href="/boards" class="text-white/40 hover:text-white text-xs tracking-[0.2em] uppercase transition-colors flex items-center gap-2">
+      <a href={`${base}boards`} class="text-white/40 hover:text-white text-xs tracking-[0.2em] uppercase transition-colors flex items-center gap-2">
         <span>ALL BOARDS</span>
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
           <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -157,7 +159,7 @@ const featured = allBoards
         <h2 class="text-3xl font-black tracking-tight italic mb-4">2026/27 プロダクトカタログ</h2>
         <p class="text-white/40 text-sm mb-8">全モデルの詳細スペックをPDFでダウンロード</p>
         <a
-          href="/SPREAD_CATALOG2026JP.pdf"
+          href={`${base}SPREAD_CATALOG2026JP.pdf`}
           target="_blank"
           class="inline-flex items-center gap-3 bg-white text-black text-xs font-bold tracking-[0.2em] uppercase px-8 py-3 hover:bg-red-600 hover:text-white transition-colors duration-200"
         >
