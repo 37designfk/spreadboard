@@ -2,11 +2,11 @@
 
 @layer base {
   :root {
-    --color-bg: #ffffff;
-    --color-surface: #f8f8f8;
-    --color-border: #e5e5e5;
-    --color-text: #111111;
-    --color-muted: #888888;
+    --color-bg: #000000;
+    --color-surface: #0a0a0a;
+    --color-border: #1a1a1a;
+    --color-text: #f0f0f0;
+    --color-muted: #666666;
     --color-accent: #cc0000;
   }
 
@@ -33,7 +33,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #f0f0f0;
+    background: #000;
   }
 
   ::-webkit-scrollbar-thumb {
