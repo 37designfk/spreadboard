@@ -71,21 +71,21 @@ const rdTeam = [
   description="SPREAD SNOWBOARDSのチームライダー紹介。"
 >
   <!-- Page Header -->
-  <div class="max-w-7xl mx-auto px-6 pt-12 pb-8 border-b border-white/5">
-    <p class="text-red-500 text-[10px] tracking-[0.4em] uppercase mb-3">RIDERS</p>
+  <div class="max-w-7xl mx-auto px-6 pt-12 pb-8 border-b border-black/5">
+    <p class="text-red-600 text-[10px] tracking-[0.4em] uppercase mb-3">RIDERS</p>
     <h1 class="text-4xl sm:text-5xl font-black tracking-tight italic">TEAM</h1>
   </div>
 
   <!-- Main Team -->
   <div class="max-w-7xl mx-auto px-6 py-16">
     <div class="flex items-center gap-4 mb-10">
-      <h2 class="text-xs tracking-[0.4em] uppercase text-white/40 font-medium">TEAM RIDERS</h2>
-      <div class="flex-1 h-px bg-white/5"></div>
+      <h2 class="text-xs tracking-[0.4em] uppercase text-black/40 font-medium">TEAM RIDERS</h2>
+      <div class="flex-1 h-px bg-black/5"></div>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
       {mainTeam.map(rider => (
         <div class="group">
-          <div class="aspect-square overflow-hidden mb-4 bg-white/5">
+          <div class="aspect-square overflow-hidden mb-4 bg-gray-100">
             {rider.photo ? (
               <img
                 src={`${base}${rider.photo}`}
@@ -94,17 +94,17 @@ const rdTeam = [
               />
             ) : (
               <div class="w-full h-full flex items-center justify-center">
-                <span class="text-white/20 text-2xl font-black italic">{rider.name.charAt(0)}</span>
+                <span class="text-black/20 text-2xl font-black italic">{rider.name.charAt(0)}</span>
               </div>
             )}
           </div>
           {rider.model && (
-            <p class="text-[10px] tracking-[0.3em] uppercase text-white/30 mb-1">{rider.model}</p>
+            <p class="text-[10px] tracking-[0.3em] uppercase text-black/30 mb-1">{rider.model}</p>
           )}
-          <h2 class="text-sm font-black italic text-white mb-0.5">{rider.name}</h2>
-          <p class="text-white/30 text-[10px] tracking-widest">{rider.nameEn}</p>
+          <h2 class="text-sm font-black italic text-black mb-0.5">{rider.name}</h2>
+          <p class="text-black/30 text-[10px] tracking-widest">{rider.nameEn}</p>
           {rider.description && (
-            <p class="text-white/40 text-xs leading-relaxed mt-3">{rider.description}</p>
+            <p class="text-black/40 text-xs leading-relaxed mt-3">{rider.description}</p>
           )}
         </div>
       ))}
@@ -114,13 +114,13 @@ const rdTeam = [
   <!-- RD Series Team -->
   <div class="max-w-7xl mx-auto px-6 pb-16">
     <div class="flex items-center gap-4 mb-10">
-      <h2 class="text-xs tracking-[0.4em] uppercase text-white/40 font-medium">RD SERIES</h2>
-      <div class="flex-1 h-px bg-white/5"></div>
+      <h2 class="text-xs tracking-[0.4em] uppercase text-black/40 font-medium">RD SERIES</h2>
+      <div class="flex-1 h-px bg-black/5"></div>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
       {rdTeam.map(rider => (
         <div class="group">
-          <div class="aspect-square overflow-hidden mb-4 bg-white/5">
+          <div class="aspect-square overflow-hidden mb-4 bg-gray-100">
             {rider.photo ? (
               <img
                 src={`${base}${rider.photo}`}
@@ -129,17 +129,17 @@ const rdTeam = [
               />
             ) : (
               <div class="w-full h-full flex items-center justify-center">
-                <span class="text-white/20 text-2xl font-black italic">{rider.name.charAt(0)}</span>
+                <span class="text-black/20 text-2xl font-black italic">{rider.name.charAt(0)}</span>
               </div>
             )}
           </div>
           {rider.model && (
-            <p class="text-[10px] tracking-[0.3em] uppercase text-white/30 mb-1">{rider.model}</p>
+            <p class="text-[10px] tracking-[0.3em] uppercase text-black/30 mb-1">{rider.model}</p>
           )}
-          <h2 class="text-sm font-black italic text-white mb-0.5">{rider.name}</h2>
-          <p class="text-white/30 text-[10px] tracking-widest">{rider.nameEn}</p>
+          <h2 class="text-sm font-black italic text-black mb-0.5">{rider.name}</h2>
+          <p class="text-black/30 text-[10px] tracking-widest">{rider.nameEn}</p>
           {rider.description && (
-            <p class="text-white/40 text-xs leading-relaxed mt-3">{rider.description}</p>
+            <p class="text-black/40 text-xs leading-relaxed mt-3">{rider.description}</p>
           )}
         </div>
       ))}

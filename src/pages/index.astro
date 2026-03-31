@@ -15,39 +15,39 @@ const featured = allBoards
   <!-- Hero -->
   <section class="relative min-h-[90vh] flex items-end pb-16 overflow-hidden">
     <!-- Background -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black">
+    <div class="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white">
       <!-- Decorative lines -->
       <div class="absolute inset-0 opacity-5">
-        <div class="absolute left-1/4 top-0 bottom-0 w-px bg-white"></div>
-        <div class="absolute left-2/4 top-0 bottom-0 w-px bg-white"></div>
-        <div class="absolute left-3/4 top-0 bottom-0 w-px bg-white"></div>
+        <div class="absolute left-1/4 top-0 bottom-0 w-px bg-black"></div>
+        <div class="absolute left-2/4 top-0 bottom-0 w-px bg-black"></div>
+        <div class="absolute left-3/4 top-0 bottom-0 w-px bg-black"></div>
       </div>
       <!-- Red accent line -->
-      <div class="absolute left-0 right-0 h-px bg-red-600/30 top-1/3"></div>
+      <div class="absolute left-0 right-0 h-px bg-red-600/20 top-1/3"></div>
     </div>
 
     <div class="relative max-w-7xl mx-auto px-6 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
         <!-- Text -->
         <div>
-          <p class="text-white/30 text-xs tracking-[0.4em] uppercase mb-6">
+          <p class="text-black/30 text-xs tracking-[0.4em] uppercase mb-6">
             WINTER 2026 / 2027
           </p>
           <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-6">
-            <span class="italic text-white">SPREAD</span>
+            <span class="italic text-black">SPREAD</span>
             <br />
-            <span class="text-white/20 text-3xl sm:text-4xl font-light tracking-[0.1em] not-italic">
+            <span class="text-black/20 text-3xl sm:text-4xl font-light tracking-[0.1em] not-italic">
               SNOWBOARDS
             </span>
           </h1>
-          <p class="text-white/50 text-sm leading-relaxed max-w-md mb-8">
+          <p class="text-black/50 text-sm leading-relaxed max-w-md mb-8">
             2017年誕生。国産アクトギア工場の技術力で作られた<br class="hidden sm:block" />
             高性能スノーボード。滑りの本質を追求した一本を。
           </p>
           <div class="flex flex-wrap gap-4">
             <a
               href={`${base}/boards`}
-              class="inline-flex items-center gap-3 bg-white text-black text-xs font-bold tracking-[0.2em] uppercase px-6 py-3 hover:bg-red-600 hover:text-white transition-colors duration-200"
+              class="inline-flex items-center gap-3 bg-black text-white text-xs font-bold tracking-[0.2em] uppercase px-6 py-3 hover:bg-red-600 transition-colors duration-200"
             >
               <span>BOARDS 2026/27</span>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -56,7 +56,7 @@ const featured = allBoards
             </a>
             <a
               href={`${base}/contact`}
-              class="inline-flex items-center gap-3 border border-white/20 text-white/60 text-xs font-medium tracking-[0.2em] uppercase px-6 py-3 hover:border-white/50 hover:text-white transition-colors duration-200"
+              class="inline-flex items-center gap-3 border border-black/20 text-black/60 text-xs font-medium tracking-[0.2em] uppercase px-6 py-3 hover:border-black/50 hover:text-black transition-colors duration-200"
             >
               CONTACT
             </a>
@@ -71,8 +71,8 @@ const featured = allBoards
             { num: '\'17', label: 'SINCE' },
           ].map(({ num, label }) => (
             <div class="text-center">
-              <p class="text-4xl font-black text-white italic">{num}</p>
-              <p class="text-white/30 text-[10px] tracking-[0.3em] uppercase mt-1">{label}</p>
+              <p class="text-4xl font-black text-black italic">{num}</p>
+              <p class="text-black/30 text-[10px] tracking-[0.3em] uppercase mt-1">{label}</p>
             </div>
           ))}
         </div>
@@ -84,12 +84,12 @@ const featured = allBoards
   <section class="max-w-7xl mx-auto px-6 py-24">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <div>
-        <p class="text-red-500 text-[10px] tracking-[0.4em] uppercase mb-4">ABOUT</p>
+        <p class="text-red-600 text-[10px] tracking-[0.4em] uppercase mb-4">ABOUT</p>
         <h2 class="text-3xl sm:text-4xl font-black tracking-tight italic mb-8">
           日本が誇る<br />
-          <span class="text-white/40 font-light not-italic text-xl tracking-normal">スノーボードメーカー</span>
+          <span class="text-black/40 font-light not-italic text-xl tracking-normal">スノーボードメーカー</span>
         </h2>
-        <div class="space-y-4 text-white/50 text-sm leading-relaxed">
+        <div class="space-y-4 text-black/50 text-sm leading-relaxed">
           <p>
             SPREAD snowboardsは2017年に誕生しました。国産スノーボードを代表する
             アクトギア工場の技術力と、ライダーのフィードバックを融合させた
@@ -105,15 +105,15 @@ const featured = allBoards
       <!-- Series grid -->
       <div class="grid grid-cols-2 gap-3">
         {[
-          { series: 'LT SERIES', desc: 'ライトウェイト', models: 'LTA-F / LTB / LTY / LTV', color: 'border-white/10' },
-          { series: 'X SERIES', desc: '高性能オールラウンド', models: 'AX-F / BX / BX-F', color: 'border-red-800/40' },
-          { series: 'RD SERIES', desc: 'カービング特化', models: 'RD / RD CV', color: 'border-white/10' },
-          { series: 'SPECIAL', desc: 'スペシャルモデル', models: 'DX / ZERO', color: 'border-white/10' },
+          { series: 'LT SERIES', desc: 'ライトウェイト', models: 'LTA-F / LTB / LTY / LTV', color: 'border-black/10' },
+          { series: 'X SERIES', desc: '高性能オールラウンド', models: 'AX-F / BX / BX-F', color: 'border-red-200' },
+          { series: 'RD SERIES', desc: 'カービング特化', models: 'RD / RD CV', color: 'border-black/10' },
+          { series: 'SPECIAL', desc: 'スペシャルモデル', models: 'DX / ZERO', color: 'border-black/10' },
         ].map(({ series, desc, models, color }) => (
-          <a href={`${base}/boards`} class:list={['border p-5 hover:border-white/30 transition-colors group', color]}>
-            <p class="text-[10px] tracking-[0.25em] uppercase text-white/30 group-hover:text-red-400 transition-colors mb-2">{series}</p>
-            <p class="text-white text-sm font-medium mb-1">{desc}</p>
-            <p class="text-white/30 text-xs">{models}</p>
+          <a href={`${base}/boards`} class:list={['border p-5 hover:border-black/30 transition-colors group bg-gray-50/50', color]}>
+            <p class="text-[10px] tracking-[0.25em] uppercase text-black/30 group-hover:text-red-600 transition-colors mb-2">{series}</p>
+            <p class="text-black text-sm font-medium mb-1">{desc}</p>
+            <p class="text-black/30 text-xs">{models}</p>
           </a>
         ))}
       </div>
@@ -124,10 +124,10 @@ const featured = allBoards
   <section class="max-w-7xl mx-auto px-6 py-12">
     <div class="flex items-end justify-between mb-10">
       <div>
-        <p class="text-red-500 text-[10px] tracking-[0.4em] uppercase mb-3">LINEUP</p>
+        <p class="text-red-600 text-[10px] tracking-[0.4em] uppercase mb-3">LINEUP</p>
         <h2 class="text-2xl font-black tracking-tight italic">2026/27 BOARDS</h2>
       </div>
-      <a href={`${base}/boards`} class="text-white/40 hover:text-white text-xs tracking-[0.2em] uppercase transition-colors flex items-center gap-2">
+      <a href={`${base}/boards`} class="text-black/40 hover:text-black text-xs tracking-[0.2em] uppercase transition-colors flex items-center gap-2">
         <span>ALL BOARDS</span>
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
           <path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -152,16 +152,16 @@ const featured = allBoards
 
   <!-- CTA -->
   <section class="max-w-7xl mx-auto px-6 py-24">
-    <div class="border border-white/10 p-12 text-center relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-red-950/20 via-transparent to-transparent"></div>
+    <div class="border border-black/10 p-12 text-center relative overflow-hidden bg-gray-50/50">
+      <div class="absolute inset-0 bg-gradient-to-r from-red-50/50 via-transparent to-transparent"></div>
       <div class="relative">
-        <p class="text-white/30 text-[10px] tracking-[0.4em] uppercase mb-4">CATALOG</p>
+        <p class="text-black/30 text-[10px] tracking-[0.4em] uppercase mb-4">CATALOG</p>
         <h2 class="text-3xl font-black tracking-tight italic mb-4">2026/27 プロダクトカタログ</h2>
-        <p class="text-white/40 text-sm mb-8">全モデルの詳細スペックをPDFでダウンロード</p>
+        <p class="text-black/40 text-sm mb-8">全モデルの詳細スペックをPDFでダウンロード</p>
         <a
           href={`${base}/SPREAD_CATALOG2026JP.pdf`}
           target="_blank"
-          class="inline-flex items-center gap-3 bg-white text-black text-xs font-bold tracking-[0.2em] uppercase px-8 py-3 hover:bg-red-600 hover:text-white transition-colors duration-200"
+          class="inline-flex items-center gap-3 bg-black text-white text-xs font-bold tracking-[0.2em] uppercase px-8 py-3 hover:bg-red-600 transition-colors duration-200"
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M7 1V9M4 6L7 9L10 6M2 11H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

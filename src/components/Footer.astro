@@ -3,19 +3,19 @@ const year = new Date().getFullYear();
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<footer class="border-t border-white/5 mt-24">
+<footer class="border-t border-black/5 mt-24">
   <div class="max-w-7xl mx-auto px-6 py-12">
     <div class="flex flex-col md:flex-row justify-between items-start gap-8">
       <!-- Brand -->
       <div>
         <a href={base || '/'} class="flex items-center gap-2 mb-4">
           <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="28" height="28" fill="white"/>
-            <path d="M17 6L11 14H16L11 22" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect width="28" height="28" fill="#111"/>
+            <path d="M17 6L11 14H16L11 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span class="text-white font-bold tracking-[0.25em] text-sm uppercase">SPREAD</span>
+          <span class="text-black font-bold tracking-[0.25em] text-sm uppercase">SPREAD</span>
         </a>
-        <p class="text-white/30 text-xs leading-relaxed max-w-xs">
+        <p class="text-black/30 text-xs leading-relaxed max-w-xs">
           SPREAD SNOWBOARDS は 2017 年に誕生した<br />
           国産スノーボードブランドです。
         </p>
@@ -24,16 +24,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <!-- Links -->
       <div class="flex gap-12">
         <div>
-          <p class="text-white/20 text-[10px] tracking-[0.3em] uppercase mb-4">Navigation</p>
+          <p class="text-black/20 text-[10px] tracking-[0.3em] uppercase mb-4">Navigation</p>
           <ul class="space-y-3">
             {[
               { label: 'HOME', href: base || '/' },
               { label: 'BOARDS', href: `${base}/boards` },
-              { label: 'TEAM', href: `${base}/team` },
+              { label: 'SHOP', href: `${base}/shop` },
               { label: 'CONTACT', href: `${base}/contact` },
             ].map(({ label, href }) => (
               <li>
-                <a href={href} class="text-white/40 hover:text-white text-xs tracking-[0.15em] uppercase transition-colors">
+                <a href={href} class="text-black/40 hover:text-black text-xs tracking-[0.15em] uppercase transition-colors">
                   {label}
                 </a>
               </li>
@@ -43,11 +43,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </div>
     </div>
 
-    <div class="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-white/20 text-xs tracking-wide">
+    <div class="mt-12 pt-6 border-t border-black/5 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-black/20 text-xs tracking-wide">
         &copy; {year} SPREAD SNOWBOARDS. All rights reserved.
       </p>
-      <p class="text-white/20 text-xs">
+      <p class="text-black/20 text-xs">
         Made in Japan
       </p>
     </div>

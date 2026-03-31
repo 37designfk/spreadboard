@@ -3,24 +3,24 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const nav = [
   { label: 'HOME', href: base || '/' },
   { label: 'BOARDS', href: `${base}/boards` },
-  { label: 'TEAM', href: `${base}/team` },
+  { label: 'SHOP', href: `${base}/shop` },
   { label: 'CONTACT', href: `${base}/contact` },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-black/90 backdrop-blur-sm">
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur-sm">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
     <!-- Logo -->
     <a href={base || '/'} class="flex items-center gap-2 group">
       <div class="relative">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="28" height="28" fill="white"/>
-          <path d="M17 6L11 14H16L11 22" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect width="28" height="28" fill="#111"/>
+          <path d="M17 6L11 14H16L11 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <span class="text-white font-bold tracking-[0.25em] text-sm uppercase">SPREAD</span>
+      <span class="text-black font-bold tracking-[0.25em] text-sm uppercase">SPREAD</span>
     </a>
 
     <!-- Desktop Nav -->
@@ -32,7 +32,7 @@ const currentPath = Astro.url.pathname;
             href={href}
             class:list={[
               'text-xs tracking-[0.2em] uppercase font-medium transition-colors duration-200',
-              isActive ? 'text-white' : 'text-white/40 hover:text-white/80'
+              isActive ? 'text-black' : 'text-black/40 hover:text-black/80'
             ]}
           >
             {label}
@@ -47,13 +47,13 @@ const currentPath = Astro.url.pathname;
       class="md:hidden w-8 h-8 flex flex-col justify-center gap-1.5"
       aria-label="メニューを開く"
     >
-      <span class="block h-px bg-white transition-all duration-300" id="line1"></span>
-      <span class="block h-px bg-white transition-all duration-300" id="line2"></span>
+      <span class="block h-px bg-black transition-all duration-300" id="line1"></span>
+      <span class="block h-px bg-black transition-all duration-300" id="line2"></span>
     </button>
   </div>
 
   <!-- Mobile Nav -->
-  <div id="mobile-nav" class="hidden md:hidden border-t border-white/10 bg-black">
+  <div id="mobile-nav" class="hidden md:hidden border-t border-black/5 bg-white">
     <nav class="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-5">
       {nav.map(({ label, href }) => {
         const isActive = href === base ? (currentPath === base || currentPath === base.replace(/\/$/, '')) : currentPath.startsWith(href);
@@ -62,7 +62,7 @@ const currentPath = Astro.url.pathname;
             href={href}
             class:list={[
               'text-xs tracking-[0.3em] uppercase font-medium transition-colors',
-              isActive ? 'text-white' : 'text-white/40'
+              isActive ? 'text-black' : 'text-black/40'
             ]}
           >
             {label}
